@@ -1,0 +1,9 @@
+sudo: requierd
+services:
+  -docker
+
+befor_install:
+  - docker build -t noakarminsky/docker-react-noa -f Dockerfile.dev .
+
+  script:
+   -docker run noakarminsky/ocker-react-noa npm run test -- --coverage
